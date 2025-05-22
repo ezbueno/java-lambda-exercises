@@ -223,7 +223,7 @@ Furniture: $1000.0
 - Utility classes (`PrimeUtils`) and shared models (`Product`)  
 
 ## How to Use
-1. Navigate to each package (`ex01`-`ex15`)  
+1. Navigate to each package (`ex01`-`ex24`)  
 2. Run the `*Example` class's `main()` method  
 3. Observe console output for results  
 
