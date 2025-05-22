@@ -1,6 +1,6 @@
 # Java Lambda Expressions Exercises
 
-This repository contains a series of exercises to practice Java lambda expressions and functional interfaces. Exercises are organized in separate packages (`ex01` to `ex15`).
+This repository contains a series of exercises to practice Java lambda expressions and functional interfaces. Exercises are organized in separate packages (`ex01` to `ex24`).
 
 ## Exercises
 
