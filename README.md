@@ -69,7 +69,151 @@ Filter electronics under R$1000, sort by price.
 **Package:** `developer.ezandro.ex15`  
 Extension of `ex14` showing only the 3 cheapest electronics.
 
-## Key Concepts Practiced  
+### Exercise 16: Maximum Number Finder  
+**Package:** `developer.ezandro.ex16`  
+Finds the maximum value in a list using `Stream.max()`.  
+**Key Improvements:**  
+- Dedicated method `findMaxNumber()` for reuse  
+- Proper `Optional` handling with `ifPresentOrElse()`  
+- Clear user feedback for empty lists  
+
+### Exercise 17: Word Length Grouper  
+**Package:** `developer.ezandro.ex17`  
+Groups words by their length using `Collectors.groupingBy()`.  
+**Key Concepts:**  
+- `Collectors.groupingBy(classifier)`  
+- Method reference (`String::length`)  
+- Map<Integer, List<String>> structure  
+
+**Example Output:**  
+```
+{4=[java, code], 6=[stream, lambda]}
+```
+
+### Exercise 18: String Concatenator  
+**Package:** `developer.ezandro.ex18`  
+**Objective:**  
+- Practice Stream API with `Collectors.joining()`  
+- Demonstrate null-safe string concatenation  
+
+**Key Improvements:**  
+- Descriptive variable name (`commaSeparatedNames`)  
+- Production-ready with `Objects::nonNull` filter  
+- Clear Javadoc about API choices  
+
+**Output Example:**  
+```
+Alice, Bob, Charlie
+```
+
+### Exercise 19: Sum of Even Squares  
+**Package:** `developer.ezandro.ex19`  
+**Objective:**  
+Calculate the sum of squares of even numbers using optimized stream operations.  
+
+**Key Features:**  
+- Null-safe by design (returns 0 for empty/no-even lists)  
+- Primitive stream (`mapToInt`) for performance  
+- Self-documenting method name  
+
+**Example:**  
+```
+Input: [1, 2, 3, 4, 5, 6]  
+Process: 2² + 4² + 6²  
+Output: 56
+```
+
+### Exercise 20: Even/Odd Splitter  
+**Package:** `developer.ezandro.ex20`  
+
+**Objective:**  
+Separate numbers into even/odd lists using `Collectors.partitioningBy()`.  
+
+**Key Features:**  
+- `Collectors.partitioningBy(n -> n % 2 == 0)`  
+- Returns `Map<Boolean, List<Integer>>` where:  
+  - `true` → Even numbers  
+  - `false` → Odd numbers  
+- **Note:** Not null-safe by default (add `filter(Objects::nonNull)` if needed)  
+
+**Example Output:**  
+```
+{false=[1, 3, 5], true=[2, 4, 6]}
+```
+
+### Exercise 21: Product Category Grouper  
+**Package:** `developer.ezandro.ex21`  
+**Objective:**  
+Group products by category using `Collectors.groupingBy()`.  
+
+**Key Features:**  
+- Method reference (`Product::category`)  
+- Immutable record (`Product`) usage  
+- Clean constant definitions for categories  
+
+**Example Output:**  
+```
+Category: Electronics
+- Smartphone ($800.00)
+- Keyboard ($200.00)
+- Monitor ($900.00)
+
+Category: Furniture
+- Chair ($300.00)
+- Desk ($700.00)
+```
+
+### Exercise 22: Product Category Counter  
+**Package:** `developer.ezandro.ex22`  
+**Objective:**  
+Count products per category using downstream collectors.  
+
+**Key Features:**  
+- `Collectors.groupingBy` + `Collectors.counting()`  
+- Immutable record usage  
+- Type-safe mapping (`Map<String, Long>`)  
+
+**Example Output:**  
+```
+Electronics: 3 product(s)
+Furniture: 2 product(s)
+```
+
+### Exercise 23: Category Price Leader  
+**Package:** `developer.ezandro.ex23`  
+**Objective:**  
+Find the most expensive product in each category with proper `Optional` handling.  
+
+**Key Improvements:**  
+- Safe `Optional` unwrapping with `ifPresentOrElse`  
+- Null-safe terminal operation  
+- Clear price formatting  
+
+**Example Output:**  
+```
+Electronics: Monitor - $900.0
+Furniture: Desk - $700.0
+```
+
+### Exercise 24: Category Price Sum Calculator  
+**Package:** `developer.ezandro.ex24`  
+
+**Objective:**  
+Calculate the total price of products per category using Stream API.  
+
+**Key Concepts:**  
+- `Collectors.groupingBy()` + `summingDouble()`  
+- Method references (`Product::category`, `Product::price`)  
+- Formatted monetary output  
+
+
+**Example Output:**  
+```
+Electronics: $1900.0
+Furniture: $1000.0 
+```
+
+### Key Concepts Practiced  
 - Lambda expressions syntax  
 - Functional interfaces  
 - Collections operations (`filter`, `map`, `sorted`, `distinct`)  
